@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS spincycle_db;
+CREATE DATABASE spincycle_db;
