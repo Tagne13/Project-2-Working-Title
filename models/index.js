@@ -3,7 +3,8 @@ const Review = require('./review');
 const Comment = require('./comment');
 
 User.hasMany(Review, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
 User.hasMany(Comment, {
