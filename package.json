@@ -1,5 +1,5 @@
 {
-  "name": "project-2-working-title",
+  "name": "spin-cycle",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tagne13/Project-2-Working-Title.git"
+    "url": "git+https://github.com/Tagne13/Spin-Cycle"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tagne13/Project-2-Working-Title/issues"
+    "url": "https://github.com/Tagne13/Spin-Cycle"
   },
-  "homepage": "https://github.com/Tagne13/Project-2-Working-Title#readme",
+  "homepage": "https://github.com/Tagne13/Spin-Cycle#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",

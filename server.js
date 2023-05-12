@@ -43,11 +43,11 @@ app.use(session(sess));
 // app.set("view engine", "handlebars");
 
 // Middleware for parsing JSON and urlencoded form data
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (import CSS file)
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to routes in controller folder
 app.use(routes);
