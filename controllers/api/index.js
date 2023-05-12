@@ -3,8 +3,8 @@ const userRoutes = require('./userRoutes');
 const reviewRoutes = require('./reviewRoutes');
 const commentRoutes = require('./commentRoutes');
 
-router.use('/users', userRoutes);
-router.use('/reviews', reviewRoutes);
-router.use('/comments', commentRoutes);
+router.use('/user', userRoutes);
+router.use('/review', reviewRoutes);
+router.use('/comment', commentRoutes);
 
 module.exports = router;
