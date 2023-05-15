@@ -1,0 +1,21 @@
+:root {
+    --primary: #4c4c4c; 
+    --light: #e3e4e3;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--primary);
+}
+  
+header {
+    padding: 40px;
+    text-align: center;
+    background: var(--primary);
+    color: var(--light);
+}
