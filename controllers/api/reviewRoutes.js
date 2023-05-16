@@ -3,7 +3,7 @@ const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //// get all reviews////
-router.get('/', wtihAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
       const reviewData = await Review.findAll();
       res.status(200).json(reviewData);
@@ -14,7 +14,7 @@ router.get('/', wtihAuth, async (req, res) => {
 
 
 //// post new review/////
-router.post('/', wtihAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
    try {
       const newReview = await Review.create({
         ...req.body,
@@ -29,7 +29,7 @@ router.post('/', wtihAuth, async (req, res) => {
 
 
   //// update a review/////
-  router.put('/:id', wtihAuth, async (req, res) => {
+  router.put('/:id', withAuth, async (req, res) => {
     try {
     Review.update(
       {
@@ -51,7 +51,7 @@ router.post('/', wtihAuth, async (req, res) => {
       };
   });
   
-  router.delete('/:id', wtihAuth, async (req, res) => {
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
       const reviewData = await Review.destroy({
         where: {

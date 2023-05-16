@@ -11,26 +11,26 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET a single user
-router.get('/:id', async (req, res) => {
-    try {
-        const userData = await User.findOne();
-        if (!userData) {
-            res.status(404).json({ message: 'No user found with this id!' });
-            return;
-        };
-        res.status(200).json(userData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+// // GET a single user
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const userData = await User.findOne();
+//         if (!userData) {
+//             res.status(404).json({ message: 'No user found with this id!' });
+//             return;
+//         };
+//         res.status(200).json(userData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // CREATE a new user
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
         
-        req.sessio.save(() => {
+        req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
