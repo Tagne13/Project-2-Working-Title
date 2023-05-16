@@ -16,6 +16,7 @@ router.post("/", withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
+      review_id: req.session.review_id,
     });
 
     res.status(200).json(newComment);
@@ -34,6 +35,7 @@ router.put("/:id", withAuth, async (req, res) => {
         where: {
           id: req.params.id,
           user_id: req.session.user_id,
+          review_id: req.session.review_id,
         },
       }
     ).then((updatedComment) => {
@@ -50,6 +52,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
+        review_id: req.session.review_id,
       },
     });
     if (!commentData) {
