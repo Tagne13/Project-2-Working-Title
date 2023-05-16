@@ -1,11 +1,21 @@
 const router = require('express').Router();
 const { Review } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  
-  
+//// get all reviews////
+router.get('/', wtihAuth, async (req, res) => {
   try {
+      const reviewData = await Review.findAll();
+      res.status(200).json(reviewData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
+
+//// post new review/////
+router.post('/', wtihAuth, async (req, res) => {
+   try {
       const newReview = await Review.create({
         ...req.body,
         user_id: req.session.user_id,
@@ -16,8 +26,32 @@ router.get('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+
+  //// update a review/////
+  router.put('/:id', wtihAuth, async (req, res) => {
+    try {
+    Review.update(
+      {
+        ...req.body,
+      },
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.params.user_id,
+        },
+      }
+    )
+      .then((updatedReview) => {
+        res.json(updatedReview);
+      });
+      
+    }  catch(err) {
+        res.json(err);
+      };
+  });
   
-  router.delete('/:id', async (req, res) => {
+  router.delete('/:id', wtihAuth, async (req, res) => {
     try {
       const reviewData = await Review.destroy({
         where: {
