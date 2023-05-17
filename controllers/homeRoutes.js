@@ -124,7 +124,7 @@ router.get('/review', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/review');
+        res.redirect('/home');
         return;
     }
 
@@ -133,7 +133,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/signup');
+        res.redirect('/home');
         return;
     }
 
