@@ -1,15 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/jass" href="/public/css/jass.css">
     <title>SpinCycle</title>
   </head>
+
   <body>
-    <header>
-        <h1>SpinCycle</h1>
-    </header>
+    <div class="container">
+      <h1><span role="img" aria-label="music">&#127911</span>Spin Cycle</h1>
+    </div>
+
+      </div>
+    </div>
+
+    <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/public/js/logout.js"></script>
+  {{/if}}
 
   </body>
 </html>
