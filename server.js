@@ -1,9 +1,9 @@
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-// const exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 const routes = require("./controllers");
-// const helpers = require("./utils/helpers");
+const helpers = require("./utils/helpers");
 
 // Import db connection
 const sequelize = require("./config/connection");
@@ -18,7 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 // Set up session and connect to Sequelize db
 const sess = {
@@ -39,15 +39,15 @@ const sess = {
 app.use(session(sess));
 
 // Inform Express.js which template engine to use
-// app.engine("handlebars", hbs.engine);
-// app.set("view engine", "handlebars");
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (import CSS file)
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to routes in controller folder
 app.use(routes);
