@@ -1,0 +1,34 @@
+<a href="/homepage" class="go-back"> &larr; Back to homepage</a>
+
+<article class="new-page">
+    <section class="edit-form-page">
+        <div class="form-heading">
+            <h2>
+                Edit Review
+            </h2>
+        </div>
+        <div class="form-section">
+            <form class="edit-review-form">
+                <div class="review-title-section">
+                    <label for="review-title">Title</label>
+                    <input type="text" name="review-title" id="review-title" value="{{review.title}}" />
+                </div>
+                <div class="review-description">
+                    <label for="review-description">Review</label>
+                    <textarea class="entry-field" id="review-description" name="review-description">{{review.description}}</textarea>
+                </div>
+                <div class="review-rating">
+                    <label for="review-rating">Rating (0 (garbage) to 10 (transcendent)):</label>
+                    <input type="number" id="review-rating" name="review-rating" min="0" max="10" value="{{review.rating}}"/>
+                </div>
+                <button type="submit">Update review</button>
+                <button type="button" class="delete-review-btn">Delete review</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+{{#if loggedIn}}
+<script src="public/js/edit-review.js"></script>
+<script src="public/js/delete-review.js"></script>
+{{/if}}
