@@ -1,0 +1,28 @@
+<a href="/homepage" class="go-back"> &larr; Back to Homepage</a>
+
+<article class="new-page">
+    <section class="new-form-page">
+        <div class="form-heading">
+            <h2>Create New Album Review</h2>
+        </div>
+        <div class="form-section">
+            <form class="new-review-form">
+                <div class="review-title-section">
+                    <label for="review-title">Title</label>
+                    <input type="text" id="review-title" name="review-title" />
+                </div>
+                <div class="review-description">
+                    <label for="review-description">Review</label>
+                    <textarea class="entry-field" id="review-description" name="review-description"></textarea>
+                </div>
+                <div class="review-rating">
+                    <label for="review-rating">Rating (0 (garbage) to 10 (transcendent)):</label>
+                    <input type="number" id="review-rating" name="review-rating" min="0" max="10"/>
+                </div>
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+        </div>
+    </section>
+</article>
+
+<script src="public/js/create-review.js"></script>
