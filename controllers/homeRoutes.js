@@ -113,7 +113,7 @@ router.get('/review', withAuth, async (req, res) => {
 
       const user = UserData.get({ plain : true });
 
-      res.render('review', {
+      res.render('createReview', {
         ...user,
         logged_in: true
       });
@@ -141,10 +141,10 @@ router.get('/signup', (req, res) => {
 });
 
 
-router.get('*', (req, res) => {
-    res.status(404).send("Can't go there!");
-    // res.redirect('/');
-});
+// router.get('*', (req, res) => {
+//     res.status(404).send("Can't go there!");
+//     // res.redirect('/');
+// });
 
 
 module.exports = router;

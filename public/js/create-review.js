@@ -1,9 +1,10 @@
 const createFormHandler = async (event) => {
     event.preventDefault();
+    
 
     const title = document.querySelector('input[name="review-title"]').value.trim();
     const description = document.querySelector('textarea[name="review-description"]').value.trim();
-    const rating = document.querySelector('input[name="review-rating"').value.trim();
+    const rating = document.querySelector('input[name="review-rating"]').value.trim();
 
     const response = await fetch(`api/reviews`, {
         method: 'POST',
@@ -13,6 +14,7 @@ const createFormHandler = async (event) => {
             rating
         }),
         headers: {
+            
             'Content-Type': 'application/json'
         }
     });

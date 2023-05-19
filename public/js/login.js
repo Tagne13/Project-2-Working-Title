@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
 
         if (response.ok) {
             // If successful, redirect the browser to the homepage
-            document.location.replace('/home');
+            document.location.replace('/homepage');
         } else {
             alert('This email address is already in use');
         }
