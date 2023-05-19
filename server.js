@@ -4,6 +4,7 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const formatDate = require("./utils/helpers");
+const ifetch = require("isomorphic-fetch");
 
 // Import db connection
 const sequelize = require("./config/connection");
@@ -51,6 +52,19 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to routes in controller folder
 app.use(routes);
+app.get("/retrieve-album", (req, res) => {
+  const apiURL = `https://api.deezer.com/search/album?q=${req.query.albumName}`;
+  ifetch(apiURL)
+    .then((response) => response.json())
+    .then((albumData) => res.send(albumData));
+});
+
+app.get("/retrieve-albumById", (req, res) => {
+  const apiURL = `https://api.deezer.com/album/${req.query.albumid}`;
+  ifetch(apiURL)
+    .then((response) => response.json())
+    .then((albumData) => res.send(albumData));
+});
 
 // Sync sequelize models to db; turn on server
 sequelize.sync({ force: false }).then(() => {
