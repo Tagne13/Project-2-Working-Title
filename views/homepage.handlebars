@@ -16,7 +16,8 @@
       {{#if review.albumData}}
         <p>Album Title: {{review.albumData.title}}</p>
         <p>Artist Name: {{review.albumData.artist.name}}</p>
-        <p>Cover Image: {{review.albumData.cover_medium}}</p>
+        {{!-- <p>Cover Image: {{review.albumData.cover_medium}}</p> --}}
+        <img src="{{review.albumData.cover_medium}}" width="300px" />
       {{else}}
         <p>No albums found</p>
       {{/if}}
