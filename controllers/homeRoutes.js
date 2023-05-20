@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
     const reviewsToReturn = reviews.map((review) => {
       const match = albumData.filter(
         (item) => item.id == parseInt(review.albumId)
-      );
+      )
       return {
         albumData: match[0],
         ...review,
