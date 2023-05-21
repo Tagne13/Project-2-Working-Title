@@ -6,7 +6,7 @@
 header {
     border-bottom: 1px solid #ccc;
     padding: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: x-large;
     text-align: center;
     background: var(--primary);
@@ -34,7 +34,7 @@ body {
     border: 1px solid transparent;
     outline: none;
     color: #1a1a1a;
-    background-color: #aeaeae;
+    background-color: var(--primary);
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -42,10 +42,13 @@ form {
     width: 100%;
 }
 
-form .form-group {
-    display: block;
-    width: 100%;
-    margin: 0.625rem 0;
+form .form-group,
+form .review-title-section,
+form .review-description,
+form .review-rating {
+   display: block;
+   width: 100%;
+   margin: 0.625rem 0;
 }
   
 form .form-input,
@@ -60,6 +63,17 @@ form .form-label {
   margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
+form .review-input {
+    width: 40%;
+    padding: 0.75rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    margin: 0.625rem 0;
+    font-size: 1.2rem;
+    border: 1px solid #484848;
+    border-radius: 0.3rem;
+}
+
 form .form-input {
   width: 100%;
   padding: 0.75rem;
@@ -69,6 +83,13 @@ form .form-input {
   font-size: 1.2rem;
   border: 1px solid #484848;
   border-radius: 0.3rem;
+}
+
+form label,
+form .form-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
 .row {
@@ -81,3 +102,9 @@ form .form-input {
 .go-back {
     margin-left: 20px;
 }
+
+.new-form-page {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
