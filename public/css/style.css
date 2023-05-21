@@ -41,16 +41,19 @@ body {
 form {
     width: 100%;
 }
-
-form .form-group {
-    display: block;
-    width: 100%;
-    margin: 0.625rem 0;
-}
   
 form .form-input,
 form .form-textarea {
    display: block;
+}
+
+form .form-group,
+form .review-title-section,
+form .review-description,
+form .review-rating {
+   display: block;
+   width: 100%;
+   margin: 0.625rem 0;
 }
 
 form label,
@@ -71,6 +74,18 @@ form .form-input {
   border-radius: 0.3rem;
 }
 
+form .review-form-input,
+form .entry-field {
+  width: 40%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -80,4 +95,9 @@ form .form-input {
 
 .go-back {
     margin-left: 20px;
+}
+
+.new-page {
+    margin-left: 100px;
+    margin-top: 30px;
 }
