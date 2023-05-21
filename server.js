@@ -5,6 +5,7 @@ const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 const formatDate = require("./utils/helpers");
 const ifetch = require("isomorphic-fetch");
+require("dotenv").config();
 
 // Import db connection
 const sequelize = require("./config/connection");
