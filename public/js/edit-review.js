@@ -21,7 +21,7 @@ const editFormHandler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
