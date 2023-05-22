@@ -2,9 +2,9 @@
 {{#each reviews as |review|}}
   <div class="review-container">
     <div class="review-contents">
-      <h2 id="review-title">{{review.title}}</h2>
-      <p>{{review.description}}</p>
-      <p>{{rating}}/10</p>
+      <h2 id="review-title">Album Title: {{review.title}}</h2>
+      <p>Album Review: {{review.description}}</p>
+      <p>Album Rating: {{rating}}/10</p>
       <p>Created by {{review.user.name}}</p>
     </div>
     <div class="review-album-image">
