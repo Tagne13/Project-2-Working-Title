@@ -1,56 +1,59 @@
 :root {
-    --primary: #532F8C;
-    --light: #e3e4e3;
+  --primary: #532f8c;
+  --light: #e3e4e3;
 }
 
 header {
-    border-bottom: 1px solid #ccc;
-    padding: 40px;
-    margin-bottom: 15px;
-    font-size: x-large;
-    text-align: center;
-    background: var(--primary);
-    color: var(--light);
+  border-bottom: 1px solid #ccc;
+  padding: 40px;
+  margin-bottom: 15px;
+  font-size: x-large;
+  text-align: center;
+  background: var(--primary);
+  color: var(--light);
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-    background-color: var(--primary);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--primary);
 }
 
 .btn {
-    text-align: center;
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    margin: 0;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 0.3rem;
-    border: 1px solid transparent;
-    outline: none;
-    color: #1a1a1a;
-    background-color: #aeaeae;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 form {
-    width: 100%;
+  width: 100%;
 }
 
-form .form-group {
-    display: block;
-    width: 100%;
-    margin: 0.625rem 0;
-}
-  
 form .form-input,
 form .form-textarea {
-   display: block;
+  display: block;
+}
+
+form .form-group,
+form .review-title-section,
+form .review-description,
+form .review-rating {
+  display: block;
+  width: 100%;
+  margin: 0.625rem 0;
 }
 
 form label,
@@ -71,13 +74,55 @@ form .form-input {
   border-radius: 0.3rem;
 }
 
+form .review-form-input,
+form .entry-field {
+  width: 40%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .go-back {
-    margin-left: 20px;
+  margin-left: 20px;
+}
+
+.new-page {
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.review-container {
+  padding: 30px;
+  margin: 10px;
+  border: solid 5px;
+  border-color: var(--primary);
+  display: flex;
+  width: 100%;
+}
+
+.review-contents {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+}
+
+.review-album-image {
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+.button-container {
+  margin-top: 10%;
+  width: 30%;
 }
