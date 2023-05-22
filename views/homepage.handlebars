@@ -10,8 +10,16 @@
     <div class="review-album-image">
       <img class="album-cover" src="{{review.albumData.cover_medium}}" />
       <div class="button-container">
-        <a href="/comment" type="submit" class="btn btn-primary">Add Comment</a>
-        <a href="/comments/" type="submit" class="btn btn-primary">View Comments</a>
+        <a
+          href="/comment/{{review.id}}"
+          type="submit"
+          class="btn btn-primary"
+        >Add Comment</a>
+        <a
+          href="/comments/{{review.id}}"
+          type="submit"
+          class="btn btn-primary"
+        >View Comments</a>
       </div>
     </div>
   </div>
