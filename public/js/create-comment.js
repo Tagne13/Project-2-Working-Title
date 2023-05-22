@@ -1,29 +1,32 @@
+const btn = document.querySelector(".comment-btn");
+
 const commentFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const description = document.querySelector('textarea[name="comment-description"]').value.trim();
-    const albumId = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+  const description = document
+    .querySelector('textarea[name="comment-description"]')
+    .value.trim();
+  const review_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+  if (description) {
+    const response = await fetch("/api/comments/", {
+      method: "POST",
+      body: JSON.stringify({
+        review_id,
+        description,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-    if (description) {
-        const response = await fetch('api/comment', {
-            method: 'POST',
-            body: JSON.stringify({
-                albumId,
-                description
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert(response.statusText);
-        }
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
     }
-}
+  }
+};
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+btn.addEventListener("click", commentFormHandler);

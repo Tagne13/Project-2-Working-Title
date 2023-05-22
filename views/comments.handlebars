@@ -1,0 +1,12 @@
+<div class="comments">
+  {{#each comments as |comment|}}
+    <section class="comment">
+      <div class="meta">
+        {{comment.user.name}}
+      </div>
+      <div class="text">
+        {{comment.description}}
+      </div>
+    </section>
+  {{/each}}
+</div>

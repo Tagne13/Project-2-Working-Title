@@ -1,28 +1,23 @@
-<br />
-<br />
-
 <article class="new-page">
   <section class="new-form-page">
     <div class="form-heading">
       <h2>Add Comment</h2>
     </div>
     <div class="form-section">
-      <form class="new-review-form">
-        <div class="review-description">
-          <label for="review-description">Comment</label>
+      <form class="comment-form">
+        <div class="comment-description">
+          <label for="comment-description">Comment</label>
           <br />
           <textarea
             class="entry-field"
-            id="review-description"
-            name="review-description"
+            id="comment-description"
+            name="comment-description"
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Comment</button>
+        <button type="submit" class="comment-btn btn btn-primary">Submit Comment</button>
       </form>
     </div>
   </section>
 </article>
 
-{{#if loggedIn}}
-  <script src="./js/create-comment.js"></script>
-{{/if}}
+<script src="/js/create-comment.js"></script>

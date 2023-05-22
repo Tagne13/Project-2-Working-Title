@@ -29,13 +29,12 @@ router.get("/", async (req, res) => {
     const reviewsToReturn = reviews.map((review) => {
       const match = albumData.filter(
         (item) => item.id == parseInt(review.albumId)
-      )
+      );
       return {
         albumData: match[0],
         ...review,
       };
     });
-    console.log(reviewsToReturn);
     // Pass serialized data and session flag into template
     res.render("homepage", {
       reviews: reviewsToReturn,
@@ -116,31 +115,29 @@ router.get("/edit/:id", withAuth, async (req, res) => {
   }
 });
 
-// GET all comments from a specific review
-router.get("/comments/:id", withAuth, async (req, res) => {
+router.get("/comments/:review_id", withAuth, async (req, res) => {
   try {
-    const CommentData = await Comment.findByPk(req.session.id, {
+    const CommentData = await Comment.findAll({
+      where: {
+        review_id: req.params.review_id,
+      },
       include: [
-        {
-          model: Review,
-          attributes: ["id", "title", "description", "rating", "user_id", "albumId"],
-        },
         {
           model: User,
           attributes: ["name"],
         },
       ],
     });
-  
-    if (!reviewData) {
+
+    if (!CommentData) {
       res.status(404).json({ message: "No comments found" });
       return;
     }
-  
-    const comment = CommentData.get({ plain: true });
 
-    res.render('comments', {
-      ...comment,
+    const comments = CommentData.map((comment) => comment.get({ plain: true }));
+
+    res.render("comments", {
+      comments: comments,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -148,20 +145,16 @@ router.get("/comments/:id", withAuth, async (req, res) => {
   }
 });
 
-// POST a new comment
-router.get("/comment", withAuth, async (req, res) => {
+router.get("/comment/:review_id", withAuth, async (req, res) => {
   try {
-    const ReviewData = await Review.findByPk(req.session.albumId, {
-      attributes: { exclude: ["password"] },
+    const ReviewData = await Review.findByPk(req.params.review_id, {
       include: [{ model: Comment }],
     });
 
     const review = ReviewData.get({ plain: true });
-    const user = UserData.get({ plain: true });
 
     res.render("createComment", {
       ...review,
-      ...user,
       logged_in: true,
     });
   } catch (err) {
