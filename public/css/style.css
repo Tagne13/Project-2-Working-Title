@@ -81,3 +81,13 @@ form .form-input {
 .go-back {
     margin-left: 20px;
 }
+
+#main-header {
+    font-size: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: azure;
+}
+
+.content {
+    background-color: azure;
+}
