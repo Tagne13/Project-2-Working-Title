@@ -1,26 +1,17 @@
 <!-- Loop over each object in the projects array -->
 {{#each reviews as |review|}}
-  <div class="row">
-    <div class="col-md-5">
+  <div class="review-container">
+    <div class="review-contents">
       <h2 id="review-title">{{review.title}}</h2>
+      <p>{{review.description}}</p>
       <p>{{rating}}</p>
       <p>Created by {{review.user.name}} on {{formatDate}}</p>
+      <div class="button-container">
+        <button type="submit" class="btn btn-primary">Comment</button>
+      </div>
     </div>
-    <div class="col-md-7">
-      <p>
-        {{review.description}}
-      </p>
-    </div>
-    <div>
-      <h3>Album Data</h3>
-      {{#if review.albumData}}
-        <p>Album Title: {{review.albumData.title}}</p>
-        <p>Artist Name: {{review.albumData.artist.name}}</p>
-        {{!-- <p>Cover Image: {{review.albumData.cover_medium}}</p> --}}
-        <img src="{{review.albumData.cover_medium}}" width="300px" />
-      {{else}}
-        <p>No albums found</p>
-      {{/if}}
+    <div class="review-album-image">
+      <img class="album-cover" src="{{review.albumData.cover_medium}}" />
     </div>
   </div>
 {{/each}}
