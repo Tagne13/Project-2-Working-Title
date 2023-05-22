@@ -46,6 +46,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET all reviews from a specific user
 router.get("/review/:id", async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
@@ -113,16 +114,49 @@ router.get("/edit/:id", withAuth, async (req, res) => {
   }
 });
 
+router.get("/comments/:id", withAuth, async (req, res) => {
+  try {
+    const CommentData = await Comment.findByPk(req.session.id, {
+      include: [
+        {
+          model: Review,
+          attributes: ["id", "title", "description", "rating", "user_id", "albumId"],
+        },
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+  
+    if (!reviewData) {
+      res.status(404).json({ message: "No comments found" });
+      return;
+    }
+  
+    const comment = CommentData.get({ plain: true });
+
+    res.render('comments', {
+      ...comment,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/comment", withAuth, async (req, res) => {
   try {
-    const UserData = await User.findByPk(req.session.user_id, {
+    const ReviewData = await Review.findByPk(req.session.albumId, {
       attributes: { exclude: ["password"] },
       include: [{ model: Comment }],
     });
 
+    const review = ReviewData.get({ plain: true });
     const user = UserData.get({ plain: true });
 
     res.render("createComment", {
+      ...review,
       ...user,
       logged_in: true,
     });

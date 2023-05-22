@@ -53,7 +53,7 @@
 
   Please contact us using the following links:
 
-  [Jeff Montagne](https://github.com/Tagne13) [Hank Richter](https://github.com/HankRichter) [Eric Tranchell](https://github.com/etranchell) [Griffon Dean](https://github.com/griffdean)
+  [Jeff Montagne](https://github.com/Tagne13), [Hank Richter](https://github.com/HankRichter), [Eric Tranchell](https://github.com/etranchell), [Griffon Dean](https://github.com/griffdean)
 
-  [Email: Tagne13@gmail.com](mailto:Tagne13@gmail.com)
-  [hankrichter97@gmail.com](mailto:hankrichter97@gmail.com) [erictranchell@yahoo.com](mailto:erictranchell@yahoo.com) [grdean14@gmail.com](mailto:grdean14@gmail.com)
+  [Email: Tagne13@gmail.com](mailto:Tagne13@gmail.com),
+  [hankrichter97@gmail.com](mailto:hankrichter97@gmail.com), [erictranchell@yahoo.com](mailto:erictranchell@yahoo.com), [grdean14@gmail.com](mailto:grdean14@gmail.com),
