@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-5">
       <h2 id="review-title">{{review.title}}</h2>
-      <p>{{rating}}</p>
+      <p>{{rating}}/10</p>
       <p>Created by {{review.user.name}} on {{formatDate}}</p>
     </div>
     <div class="col-md-7">
@@ -18,6 +18,8 @@
         <p>Artist Name: {{review.albumData.artist.name}}</p>
         {{!-- <p>Cover Image: {{review.albumData.cover_medium}}</p> --}}
         <img src="{{review.albumData.cover_medium}}" width="300px" />
+        <a href="/edit/{{review.id}}"> Edit/Delete Review</a>
+        <a href="/comment"> Post comment</a>
       {{else}}
         <p>No albums found</p>
       {{/if}}

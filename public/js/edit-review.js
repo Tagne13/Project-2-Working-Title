@@ -21,10 +21,10 @@ const editFormHandler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.edit-review-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-review-btn').addEventListener('submit', editFormHandler);

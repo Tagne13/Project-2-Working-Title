@@ -46,46 +46,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// // router.get('/', withAuth, async (req, res) => {
-//     try {
-//       const reviewData = await Review.findAll({
-//             attributes: ['id', 'title', 'description', 'rating'],
-//             include: [
-//                 {
-//                     model: Comment,
-//                     attributes: [
-//                         'id',
-//                         'name',
-//                         'description',,
-//                         'user_id',
-//                         'review_id'
-//                     ],
-//                     include: {
-//                         model: User,
-//                         attributes: [
-//                         'name',
-//                         ],
-//                     },
-//                 },
-//                 {
-//                     model: User,
-//                     attributes: [
-//                         'name',
-//                     ],
-//                 },
-//             ],
-//         })
-
-//         const review = reviewData.map((review) => review.get({ plain: true }));
-//         console.log('AAAA', review);
-
-//     res.status(200).json(review);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     };
-// });
-
 router.get("/review/:id", async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id, {
@@ -135,6 +95,42 @@ router.get("/review", withAuth, async (req, res) => {
   }
 });
 
+router.get("/edit/:id", withAuth, async (req, res) => {
+  try {
+    const UserData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Review }],
+    });
+
+    const user = UserData.get({ plain: true });
+
+    res.render("editReview", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/comment", withAuth, async (req, res) => {
+  try {
+    const UserData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Comment }],
+    });
+
+    const user = UserData.get({ plain: true });
+
+    res.render("createComment", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+ 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
@@ -152,10 +148,5 @@ router.get("/signup", (req, res) => {
 
   res.render("signup");
 });
-
-// router.get('*', (req, res) => {
-//     res.status(404).send("Can't go there!");
-//     // res.redirect('/');
-// });
 
 module.exports = router;
