@@ -122,6 +122,7 @@ form .entry-field {
   border-color: var(--primary);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .review-contents {
