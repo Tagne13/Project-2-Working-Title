@@ -108,21 +108,23 @@ form .entry-field {
   border: solid 5px;
   border-color: var(--primary);
   display: flex;
-  width: 100%;
+  align-items: center;
 }
 
 .review-contents {
   display: flex;
-  width: 70%;
+  width: 50%;
   flex-direction: column;
 }
 
 .review-album-image {
-  flex-direction: row-reverse;
-  display: flex;
+  object-fit: contain;
+  margin-left: 50px;
 }
 
 .button-container {
   margin-top: 10%;
   width: 30%;
+  display: flex;
+  justify-content: space-between;
 }

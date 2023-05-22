@@ -4,10 +4,11 @@
     <div class="review-contents">
       <h2 id="review-title">{{review.title}}</h2>
       <p>{{review.description}}</p>
-      <p>{{rating}}</p>
+      <p>{{rating}}/10</p>
       <p>Created by {{review.user.name}}</p>
       <div class="button-container">
-        <button type="submit" class="btn btn-primary">Comment</button>
+        <a href="/comment" type="submit" class="btn btn-primary">Add Comment</a>
+        <a href="/comments/" type="submit" class="btn btn-primary">View Comments</a>
       </div>
     </div>
     <div class="review-album-image">

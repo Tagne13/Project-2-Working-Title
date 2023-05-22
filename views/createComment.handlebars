@@ -1,23 +1,29 @@
 <a href="/" class="go-back"> &larr; Back to Homepage</a>
-<br>
-<br>
+<br />
+<br />
 
-{{> review-info review}}
+<article class="new-page">
+  <section class="new-form-page">
+    <div class="form-heading">
+      <h2>Add Comment</h2>
+    </div>
+    <div class="form-section">
+      <form class="new-review-form">
+        <div class="review-description">
+          <label for="review-description">Comment</label>
+          <br />
+          <textarea
+            class="entry-field"
+            id="review-description"
+            name="review-description"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+      </form>
+    </div>
+  </section>
+</article>
 
 {{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-description"></textarea>
-    </div>
-
-    <div>
-        <button type="submit">Submit Comment</button>
-    </div>
-</form>
-{{/if}}
-
-{{> comments review.comments}}
-
-{{#if loggedIn}}
-<script src="./js/create-comment.js"></script>
+  <script src="./js/create-comment.js"></script>
 {{/if}}
