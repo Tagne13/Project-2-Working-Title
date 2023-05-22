@@ -142,7 +142,7 @@ form .entry-field {
 .comment-container {
   padding: 30px;
   margin: 10px;
-  background-color: azure;
+  /* background-color: azure; */
   border: solid 2px;
   border-radius: 5px;
   border-color: var(--primary);
