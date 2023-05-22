@@ -102,6 +102,17 @@ form .entry-field {
   margin-top: 30px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 50%;
+}
+
 .review-container {
   padding: 30px;
   margin: 10px;
@@ -124,7 +135,20 @@ form .entry-field {
 
 .button-container {
   margin-top: 10%;
-  width: 30%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+@media (max-width: 700px) {
+  .nav-bar {
+    margin-left: 20;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .review-container {
+    display: block;
+  }
+  .review-album-image {
+    margin: 0;
+  }
 }
