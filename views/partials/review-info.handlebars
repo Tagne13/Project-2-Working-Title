@@ -1,17 +1,18 @@
 <article class="review">
-    <div class="whole-review">
-        <div class="info-section">
-            <div class="review-name">
-                <a href="/reviews/{{id}}" class="links">{{title}}</a>
-            </div>
-            <div class="created-by">
-                <p id="comment-subtitle">
-                    Posted by <b>{{user.name}} </b> on <b>{{formatDate created_at}}</b>
-                </p>
-            </div>
-        </div>
-        <div class="description-section">
-            <p>{{description}}</p>
-        </div>
+  <div class="whole-review">
+    <div class="info-section">
+      <div class="review-name">
+        <a href="/reviews/{{id}}" class="links">{{title}}</a>
+      </div>
+      <div class="created-by">
+        <p id="comment-subtitle">
+          Posted by
+          <b>{{user.name}} </b>
+        </p>
+      </div>
     </div>
+    <div class="description-section">
+      <p>{{description}}</p>
+    </div>
+  </div>
 </article>
