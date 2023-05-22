@@ -4,9 +4,9 @@ const { User, Review, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 const ifetch = require("isomorphic-fetch");
 
+// GET all reviews and join with user data
 router.get("/", async (req, res) => {
   try {
-    // Get all reviews and JOIN with user data
     const reviewData = await Review.findAll({
       include: [
         {
@@ -78,6 +78,7 @@ router.get("/review/:id", async (req, res) => {
   }
 });
 
+// POST a new review
 router.get("/review", withAuth, async (req, res) => {
   try {
     const UserData = await User.findByPk(req.session.user_id, {
@@ -96,6 +97,7 @@ router.get("/review", withAuth, async (req, res) => {
   }
 });
 
+// Edit/delete an existing review
 router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     const UserData = await User.findByPk(req.session.user_id, {
@@ -114,6 +116,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
   }
 });
 
+// GET all comments from a specific review
 router.get("/comments/:id", withAuth, async (req, res) => {
   try {
     const CommentData = await Comment.findByPk(req.session.id, {
@@ -145,6 +148,7 @@ router.get("/comments/:id", withAuth, async (req, res) => {
   }
 });
 
+// POST a new comment
 router.get("/comment", withAuth, async (req, res) => {
   try {
     const ReviewData = await Review.findByPk(req.session.albumId, {
@@ -165,6 +169,7 @@ router.get("/comment", withAuth, async (req, res) => {
   }
 });
 
+// Login route
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
@@ -174,6 +179,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+// Signup route
 router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/");
