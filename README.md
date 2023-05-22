@@ -26,7 +26,7 @@
 
   Create an account using the signup option. Once signed up you will be taken to the homepage. If you already have an account, simply login to be taken to the homepage. From here you can read previous reviews or click on the labeled link to have the option to create a review of your own. 
 
-  ![Screenshot Here](images/Screenshot.png)
+  ![Screenshot Here](images/Screenshot2.png)
 
   [Heroku Link Here](https://spin-cycle.herokuapp.com)
 
