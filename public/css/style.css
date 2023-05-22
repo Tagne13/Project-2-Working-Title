@@ -11,6 +11,8 @@ header {
   text-align: center;
   background: var(--primary);
   color: var(--light);
+  display: flex;
+  justify-content: space-between;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
   text-align: center;
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  margin: 0;
+  margin: .5rem;
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;
