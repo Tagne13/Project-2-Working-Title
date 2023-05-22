@@ -31,7 +31,7 @@ body {
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   outline: none;
   color: #1a1a1a;
   background-color: #aeaeae;
@@ -137,6 +137,22 @@ form .entry-field {
   margin-top: 10%;
   display: flex;
   justify-content: space-around;
+}
+
+.comment-container {
+  padding: 30px;
+  margin: 10px;
+  background-color: azure;
+  border: solid 2px;
+  border-radius: 5px;
+  border-color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.comment {
+  font-size: medium;
+  font-weight: bold;
 }
 
 @media (max-width: 700px) {
