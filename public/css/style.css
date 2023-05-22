@@ -167,4 +167,10 @@ form .entry-field {
   .review-album-image {
     margin: 0;
   }
+  .comment-description,
+  .review-form-input,
+  .comment-form {
+    width: 60%;
+    align-items: center;
+  }
 }
