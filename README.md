@@ -28,7 +28,7 @@
 
   ![Screenshot Here](images/Screenshot.png)
 
-  [Heroku Link Here](spin-cycle.herokuapp.com)
+  [Heroku Link Here](https://spin-cycle.herokuapp.com)
 
   ## [License](#table-of-contents)
 

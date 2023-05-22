@@ -2,15 +2,15 @@ const commentFormHandler = async (event) => {
     event.preventDefault();
 
     const description = document.querySelector('textarea[name="comment-description"]').value.trim();
-    const review_id = window.location.toString().split('/')[
+    const albumId = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
     if (description) {
-        const response = await fetch('api/comments', {
+        const response = await fetch('api/comment', {
             method: 'POST',
             body: JSON.stringify({
-                review_id,
+                albumId,
                 description
             }),
             headers: {
