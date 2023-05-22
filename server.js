@@ -3,7 +3,6 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
-const formatDate = require("./utils/helpers");
 const ifetch = require("isomorphic-fetch");
 
 // Import db connection
@@ -19,7 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ formatDate });
+const hbs = exphbs.create();
 
 // Set up session and connect to Sequelize db
 const sess = {
